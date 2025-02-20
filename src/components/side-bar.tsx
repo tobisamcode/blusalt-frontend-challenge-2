@@ -30,26 +30,16 @@ interface SidebarProps {
 const SideBar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
   return (
     <aside
-      className={`fixed top-0 left-0 h-screen bg-white border-r border-[#F0ECEC] transition-all duration-300 pt-10 ${isOpen ? "md:px-8" : "md:px-6"} flex flex-col  ${
+      className={`fixed top-0 left-0 h-screen bg-white border-r border-[#F0ECEC] transition-all duration-300 pt-6 ${isOpen ? "md:px-8" : "md:px-6"} flex flex-col  ${
         isOpen ? "w-64" : "w-0 md:w-24"
       }`}
     >
-      {/* Toggle Button
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="absolute -right-4 top-6 bg-gray-200 p-1 rounded-full shadow-md"
-      >
-        <ChevronLeft
-          className={`w-6 h-6 transition-transform ${isOpen ? "" : "rotate-180"}`}
-        />
-      </button> */}
-
       <div className="">
         {isOpen && <img className="" src="svg/logo.svg" alt="Logo" />}
 
         {/* Navigation Items */}
         <nav className="mt-12">
-          <ul className="space-y-2">
+          <ul className="space-y-3">
             {MENU_ITEMS.map((item, index) => (
               <li key={index} className={``}>
                 <NavLink

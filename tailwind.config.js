@@ -6,6 +6,7 @@ export default {
     extend: {
       fontFamily: {
         ism: ["IBM Plex Sans", "serif"],
+        inter: ["Inter", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

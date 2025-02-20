@@ -13,25 +13,21 @@ const DashboardLayout: React.FC = () => {
 
   return (
     <div className="flex h-screen">
-      {/* Sidebar */}
       <SideBar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
 
-      {/* Main Content */}
       <div
         className={`flex flex-col flex-1 transition-all ${isSidebarOpen ? "ml-64" : "ml-16 md:ml-16 sm:ml-0"}`}
       >
-        {/* Header */}
         <TopHeader
           pageTitle={currentPage}
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
         />
 
-        {/* Scrollable Content */}
         <main
-          className={`flex-1 overflow-y-auto p-6 mt-16 ${isSidebarOpen ? "ml-8" : "ml-16 md:ml-16 sm:ml-0"}`}
+          className={`flex-1 overflow-y-auto p-6 mt-16 ${isSidebarOpen ? "ml-0" : "ml-16 md:ml-8 sm:ml-0"}`}
         >
-          <Outlet /> {/* 👈 Renders the selected page content dynamically */}
+          <Outlet />
         </main>
       </div>
     </div>
